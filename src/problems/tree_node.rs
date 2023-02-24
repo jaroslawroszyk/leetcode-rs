@@ -1,3 +1,4 @@
+
 pub(crate) type NodePtr = Option<Box<TreeNode>>;
 
 #[derive(Debug)]
@@ -39,4 +40,24 @@ macro_rules! node {
             right: $right,
         }))
     };
+}
+
+
+pub fn example()
+{
+    let root = node!(3, node!(9), node!(20, node!(15), node!(7)));
+
+    // using function
+    // let root = new_tree_node(
+    //     3,
+    //     new_tree_node(9, None, None),
+    //     new_tree_node(
+    //         20,
+    //         new_tree_node(15, None, None),
+    //         new_tree_node(7, None, None),
+    //     ),
+    // );
+
+    let max = max_depth(&root);
+    println!("{}", max)
 }
