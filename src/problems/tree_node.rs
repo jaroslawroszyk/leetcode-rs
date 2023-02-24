@@ -1,12 +1,4 @@
-
-pub(crate) type NodePtr = Option<Box<TreeNode>>;
-
-#[derive(Debug)]
-pub struct TreeNode {
-    pub val: i32,
-    pub left: NodePtr,
-    pub right: NodePtr,
-}
+use crate::structures::tree_node_struct::*;
 
 #[allow(dead_code)]
 pub fn new_tree_node(val: i32, left: NodePtr, right: NodePtr) -> NodePtr {
