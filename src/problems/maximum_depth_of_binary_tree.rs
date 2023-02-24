@@ -34,22 +34,15 @@ macro_rules! node {
     };
 }
 
+#[cfg(test)]
+mod tests {
+    use crate::problems::maximum_depth_of_binary_tree::*;
 
-pub fn example()
-{
-    let root = node!(3, node!(9), node!(20, node!(15), node!(7)));
-
-    // using function
-    // let root = new_tree_node(
-    //     3,
-    //     new_tree_node(9, None, None),
-    //     new_tree_node(
-    //         20,
-    //         new_tree_node(15, None, None),
-    //         new_tree_node(7, None, None),
-    //     ),
-    // );
-
-    let max = max_depth(&root);
-    println!("{}", max)
+    #[test]
+    fn should_return_tree_with_given_tree() {
+        let root = node!(3, node!(9), node!(20, node!(15), node!(7)));
+        let result = max_depth(&root);
+        let expected = 3;
+        assert_eq!(result, expected);
+    }
 }

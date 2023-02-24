@@ -15,3 +15,25 @@ impl Solution {
         return vec![];
     }
 }
+
+pub fn two_sum_testcase() {
+    // ms = [2,7,11,15], target = 9
+    let input = vec![2, 7, 11, 15];
+    let target = 9;
+    let result = Solution::two_sum(input, target);
+    println!("Result: {:?}", result);
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::problems::two_sum::*;
+
+    #[test]
+    fn should_return_zero_and_one() {
+        let input = vec![2, 7, 11, 15];
+        let target = 9;
+        let result = Solution::two_sum(input, target);
+        let expected = vec![0,1];
+        assert_eq!(result, expected);
+    }
+}
